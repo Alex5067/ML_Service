@@ -1,0 +1,17 @@
+FROM python:3.10-bullseye
+
+WORKDIR /app/API
+
+RUN apt-get update -qq
+RUN apt-get install -qq python3-pip
+RUN apt-get install -qq python3-dev libpq-dev
+RUN apt-get install -qq nano
+
+
+RUN pip3 install --only-binary h5py h5py
+
+
+COPY API /app/API
+
+RUN pip install -r requirements.txt
+RUN pip install uvicorn
