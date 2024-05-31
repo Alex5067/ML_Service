@@ -5,7 +5,7 @@ import fastapi.middleware.cors as cors
 from fastapi import Request
 from typing import Any
 from fastapi.responses import HTMLResponse
-from ML_Service.API.model import Model
+from model import Model
 from pydantic import BaseModel
 
 app = fastapi.FastAPI()
